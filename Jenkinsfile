@@ -19,8 +19,8 @@ pipeline {
                     echo "Download github hosts"
                     sh "curl -o /etc/hosts.hellogithub https://raw.hellogithub.com/hosts"
 
-                    echo "Remove source hosts"
-                    sh "rm -f /etc/hosts"
+                    echo "Empty source hosts"
+                    sh "> /etc/hosts"
 
                     echo "Merge hosts"
                     sh "cat /etc/hosts.jenkins.bak /etc/hosts.hellogithub > /etc/hosts"
